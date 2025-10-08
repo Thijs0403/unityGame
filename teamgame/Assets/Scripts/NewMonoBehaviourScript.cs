@@ -8,9 +8,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
         // dit is regel 8
     }
 
+//Hallo Sjaak
+
     // Update is called once per frame
     void Update()
     {
-        
+        //Test Thijs 
     }
 }
