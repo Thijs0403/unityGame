@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class Resource : MonoBehaviour
 {
-    public string resourceName = "Wood";
-    public int amountPerHit = 1;
-    public int maxAmount = 5;
+    public string resourceName;
+    public int amountPerHit;
+    public int maxHits;
+    public int maxStackSize;
 
     private int currentAmount;
 
     void Start()
     {
-        currentAmount = maxAmount;
+        currentAmount = maxHits;
     }
 
     public int Gather()

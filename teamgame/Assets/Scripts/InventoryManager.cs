@@ -3,25 +3,102 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<List<string>> inventoryArray = new List<List<string>>();
+    public static InventoryManager instance { get; private set; }
 
-    public void AddItem(string itemName, string description)
+    public GameObject inventoryUI;
+
+    private List<List<string>> inventoryArray = new List<List<string>>();
+
+    public InventorySlot[] slots;
+
+    private void Awake()
     {
-        List<string> newItem = new List<string>();
-        newItem.Add(itemName + "_" + (inventoryArray.Count + 1));
-        newItem.Add(description);
-        newItem.Add("ID_" + (inventoryArray.Count + 1));
-        inventoryArray.Add(newItem);
+        inventoryUI.SetActive(false);
+        instance = this;
 
-        Debug.Log("Added a new item!");
+        if (slots == null || slots.Length == 0)
+        {
+            slots = inventoryUI.GetComponentsInChildren<InventorySlot>();
+        }
     }
 
-    public void DebugPrint()
+    bool ItemExcists(string itemName)
     {
+        foreach (List<string> item in inventoryArray)
+        {
+            if (item[1] == itemName)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void AddItem(string itemName, int maxStackSize)
+    {
+        if (inventoryArray.Count >= slots.Length)
+        {
+            Debug.Log("Inventory Full!");
+            return;
+        }
+
         for (int i = 0; i < inventoryArray.Count; i++)
         {
             List<string> item = inventoryArray[i];
-            Debug.Log("Item " + i + ": " + item[0] + ", " + item[1] + ", " + item[2]);
+
+            if (item[1] == itemName)
+            {
+                int currentAmount = int.Parse(item[2]);
+                if (currentAmount < maxStackSize)
+                {
+                    currentAmount += 1;
+                    item[2] = currentAmount.ToString();
+                    return;
+                }
+            }    
+        }
+
+        if (inventoryArray.Count < slots.Length)
+        {
+            AddNewStack(itemName);
+        }
+    }
+
+    private void AddNewStack(string itemName)
+    {
+        List<string> newItem = new List<string>();
+        newItem.Add("ID_" + (inventoryArray.Count + 1));
+        newItem.Add(itemName);
+        newItem.Add("1"); //starting amount is 1
+        inventoryArray.Add(newItem);
+    }
+
+    public void ToggleInventory()
+    {
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
+
+        if (inventoryUI.activeSelf)
+        {
+            UpdateUI();
+        }
+    }
+
+    public void UpdateUI()
+    {
+        // Clear all slots first
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].ClearSlot();
+        }
+
+        // Fill slots with items
+        for (int i = 0; i < inventoryArray.Count && i < slots.Length; i++)
+        {
+            string itemName = inventoryArray[i][1];
+            int amount = int.Parse(inventoryArray[i][2]);
+
+            slots[i].SetSlot(itemName, amount);
         }
     }
 }

@@ -1,17 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SimpleInventory))]
+//[RequireComponent(typeof(InventoryManager))]
 public class ResourceGathering : MonoBehaviour
 {
     public float gatherRange = 3f;
     public LayerMask resourceLayer;
     public Camera playerCamera;
 
-    private SimpleInventory inventory;
+    public InventoryManager inventoryManager;
 
     void Start()
     {
-        inventory = GetComponent<SimpleInventory>();
+        inventoryManager = GetComponentInChildren<InventoryManager>();
     }
 
     void Update()
@@ -33,8 +33,7 @@ public class ResourceGathering : MonoBehaviour
             if (resource != null)
             {
                 int amount = resource.Gather();
-                inventory.AddResource(resource.resourceName, amount);
-                Debug.Log($"Gathered {amount}x {resource.resourceName}");
+                InventoryManager.instance.AddItem(resource.resourceName, resource.maxStackSize);
             }
         }
         else
