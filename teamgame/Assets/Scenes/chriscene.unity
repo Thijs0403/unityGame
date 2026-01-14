@@ -647,9 +647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2646907e7eb1ee4982479955e97f77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceName: Wood
-  amountPerHit: 1
-  maxAmount: 5
+  resourceName: Brick
+  amountPerHit: 10
+  maxAmount: 50000
 --- !u!65 &44718373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 6e99dcc499e8e114ea5c489b6e72d6c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17225,7 +17225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba16f6728dbc9c44a98e3e9206486c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 134019963786496138, guid: cbadcd356e1d8e742ac270625b7429fe, type: 3}
+  wall: {fileID: 7290537856068653105, guid: 479446e080ebef84d9c6b4f24eb93e78, type: 3}
+  placedistance: 5
+  player: {fileID: 2059418562}
+  cam: {fileID: 941603263}
 --- !u!1 &2060449105
 GameObject:
   m_ObjectHideFlags: 0
