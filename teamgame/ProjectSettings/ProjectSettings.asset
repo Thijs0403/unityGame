@@ -899,7 +899,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -921,10 +927,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 2d724c3b-4104-49db-8c3a-bbf9ae99478a
+  cloudProjectId: f8665973-6870-4817-8ad4-66563a827b93
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: ZombieSurvival 2026-01-13_13-33-12
+  projectName: teamgame 2025-10-01_10-35-02
   organizationId: autarrohit995
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
