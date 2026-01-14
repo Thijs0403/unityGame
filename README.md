@@ -1,18 +1,19 @@
 # Zombie Survival document
 # v 0.0.1
 
-# 1.	Introductie
+# 1. Introductie
 
-Dit document beschrijft het ontwerp van de gameplay voor het spel [spel titel]. Het spel combineert elementen van shooter-, survival- en creativiteitsspellen en legt de nadruk op [kernfocus, bv. samenwerking, vrijheid, spanning].
+Dit document beschrijft het ontwerp van de gameplay voor het survival crafting-spel [spel titel]. Het spel combineert elementen van shooter-, survival- en creativiteitsspellen en legt de nadruk op [kernfocus, bv. samenwerking, vrijheid, spanning].  
 Het project wordt ontwikkeld door Sam, Christian, Jacques en Thijs.
 
-# 2.	Verhaal
+
+# 2. Verhaal
 
 Het verhaal speelt zich af in een alternatieve realiteit waar de mensheid een verkeerd vaccin heeft ontwikkeld. In plaats van bescherming tegen ziekte, zorgde dit vaccin voor een mutatie die mensen langzaam veranderde in agressieve zombies. Slechts een klein deel van de bevolking wist te ontsnappen of is immuun. De speler behoort tot deze groep en moet vechten om te overleven, materialen verzamelen en een veilige basis bouwen, terwijl de wereld steeds verder wordt overspoeld door hordes geïnfecteerden.
 
-# 3.	Interactie
+# 3. Interactie
 
-Ons concept voor het spel is: Een speler kan dingen slaan / kapot maken, bijvoorbeeld bomen of stenen. Hierdoor krijgt de speler materialen waarmee hij dingen kan bouwen, bijvoorbeeld beter wapens of gebouwen. De speler moet zich namelijk kunnen verdedigen tegen zombies.
+Een speler kan dingen slaan / kapot maken, bijvoorbeeld bomen of stenen. Hierdoor krijgt de speler materialen waarmee hij dingen kan bouwen, bijvoorbeeld beter wapens of gebouwen. De speler moet zich namelijk kunnen verdedigen tegen zombies.
 
 # 4. Mechanics
 
@@ -33,21 +34,34 @@ Ons concept voor het spel is: Een speler kan dingen slaan / kapot maken, bijvoor
 
 * Dag en nacht cycles: 
      1. 1 dag in het spel duurd 20 minuten, 10 minuten dag en 10 minuten nacht.
+   
 - - - 
 
 * Zombies:
      1. Als het dag is dan zijn er minder zombies te vinden. zombies zijn dan iets zwakker dan nacht zombies.
      2. Als het nacht is dan zijn er meer zombies te vinden. zombies zijn dan sterker dan dag zombies.
-     3. Zombies hebben meerdere mutatie vormen.
+     3. Zombies hebben meerdere mutatie vormen (?)
 
-# Taak verdeling
+# 5. Taak verdeling
 
 * ### Sam:
-    1. 
+    1. Zombie script
+    2. Dag en nacht cycles
+
 * ### Christian:
-    1. Objecten / materialen.
+    1. Objecten / materialen
+    2. Speler controlls
+   
 * ### Jacques:
-    1. Assets zoeken / maken voor de game (bomen, Stenen, zombies, wapens).
-    2. De map ontwerpen.
+    1. Assets zoeken / maken voor de game (bomen, Stenen, zombies, wapens)
+    2. De map ontwerpen
+
 * ### Thijs:
-    1. Inventory systeem.
+    1. Inventory systeem
+    2. Crafting systeem
+   
+# 6. Rollen
+
+* ### Game Developer
+
+* ### Sound Designer
