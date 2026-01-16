@@ -3,24 +3,19 @@ using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
-    [Header("References")]
-    public Transform player;
-    public DayNightCycle dayNightCycle;
+    public Transform player;          // Player transform
+    public DayNightCycle dayNightCycle; // Optioneel, kan automatisch gevonden worden
     private NavMeshAgent agent;
     private Animator animator;
     private AudioSource audioSource;
 
-    [Header("Movement Settings")]
-    public float daySpeed = 3f;
-    public float nightSpeed = 7f;
+    public float runSpeed = 4f;
     public float detectionDistance = 10f;
-
-    [Header("Audio Settings")]
     public AudioClip groanClip;
     public float groanCooldown = 5f;
     private float nextGroanTime = 0f;
 
-    private Vector3 lastPosition;
+    private Vector3 lastPosition; // plek waar zombie stopt
 
     void Start()
     {
@@ -28,12 +23,15 @@ public class Zombie : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
+        // Automatisch Player vinden als niet ingevuld
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
+        // Automatisch DayNightCycle vinden als niet ingevuld
         if (dayNightCycle == null)
-            dayNightCycle = GameObject.FindObjectOfType<DayNightCycle>();
+            dayNightCycle = Object.FindFirstObjectByType<DayNightCycle>();
 
+        // Startpositie opslaan
         lastPosition = transform.position;
     }
 
@@ -41,16 +39,15 @@ public class Zombie : MonoBehaviour
     {
         if (agent == null || player == null) return;
 
-        bool isDay = (dayNightCycle != null) ? dayNightCycle.IsDay() : true;
-        float currentRunSpeed = isDay ? daySpeed : nightSpeed;
-
         float sqrDistance = (player.position - transform.position).sqrMagnitude;
 
         if (sqrDistance <= detectionDistance * detectionDistance)
         {
+            // Volg speler
             agent.SetDestination(player.position);
-            agent.speed = currentRunSpeed;
+            agent.speed = runSpeed;
 
+            // Groan geluid
             if (audioSource != null && groanClip != null && Time.time >= nextGroanTime)
             {
                 audioSource.PlayOneShot(groanClip);
@@ -59,8 +56,9 @@ public class Zombie : MonoBehaviour
         }
         else
         {
+            // Te ver weg: blijf op plek
             agent.SetDestination(lastPosition);
-            agent.speed = isDay ? 0f : 2f; 
+            agent.speed = 0;
         }
 
         if (animator != null)
