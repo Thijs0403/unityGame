@@ -119,7 +119,7 @@ public class InventoryManager : MonoBehaviour
                     item[2] = currentAmount.ToString();
                     // Remove the stack if amount reaches zero
                     if (currentAmount == 0)
-                    {
+                    {                        
                         inventoryArray.RemoveAt(i);
                     }
                     return;

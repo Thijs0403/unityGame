@@ -15,7 +15,7 @@ public class InventorySlot : MonoBehaviour
 
     public void ClearSlot()
     {
-        //itemNameText.text = "";
-        //amountText.text = "";
+        itemNameText.text = "";
+        amountText.text = "";
     }
 }
