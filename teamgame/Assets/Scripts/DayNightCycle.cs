@@ -25,21 +25,18 @@ public class DayNightCycle : MonoBehaviour
 
     [Header("Moon Settings")]
     [Range(0f, 1f)]
-    public float nightMoonChance = 1f; // kans dat de maan zichtbaar is per nacht
+    public float nightMoonChance = 1f; 
 
     private const float sunriseHour = 6f;
     private const float sunsetHour = 18f;
-    private const float moonSynodicDay = 24.84f; // uren voor synodische dag
-    private const float moonPhaseDays = 29.5f;   // dagen voor volle cyclus
+    private const float moonSynodicDay = 24.84f; 
+    private const float moonPhaseDays = 29.5f;   
 
     private float TimePercent => (time % dayDuration) / dayDuration;
     private float CurrentHour => TimePercent * 24f;
 
-    // -----------------------------
-    // Variabelen voor maan-flikkering voorkomen
-    // -----------------------------
-    private bool showMoonThisNight = false; // of de maan deze nacht zichtbaar is
-    private bool nightStarted = false;      // om te detecteren wanneer de nacht start
+    private bool showMoonThisNight = false; 
+    private bool nightStarted = false;      
 
     void Update()
     {
@@ -51,17 +48,11 @@ public class DayNightCycle : MonoBehaviour
         UpdateTimeUI();
     }
 
-    // -----------------------------
-    // 1️⃣ Tijd bijwerken
-    // -----------------------------
     private void UpdateTime()
     {
         time += Time.deltaTime;
     }
 
-    // -----------------------------
-    // 2️⃣ Zon rotatie en intensiteit
-    // -----------------------------
     private void UpdateSun()
     {
         if (sunLight == null) return;
@@ -77,75 +68,61 @@ public class DayNightCycle : MonoBehaviour
         sunLight.intensity = sunIntensity;
     }
 
-    // -----------------------------
-    // 3️⃣ Maan rotatie en fase
-    // -----------------------------
     private void UpdateMoon()
     {
         if (moonPivot == null || moonLight == null) return;
 
-        // Langzame dagelijkse rotatie van de maan
+        // Maan rotatie om de aarde
         float moonDegreesPerSecond = 360f / (moonSynodicDay * 3600f);
         moonPivot.Rotate(Vector3.right, moonDegreesPerSecond * Time.deltaTime);
 
-        // Bereken fase van de maan (0 = nieuwe maan, 1 = volle maan)
-        float lunarRotation = (time / (moonPhaseDays * dayDuration)) * 360f;
-        float phase = Mathf.Cos(lunarRotation * Mathf.Deg2Rad); // -1 = nieuw, 1 = vol
-
-        // Schakel juiste maanbolletjes in op basis van fase
-        if (phase > 0.33f)
-        {
-            if (FullMoonSphere != null) FullMoonSphere.SetActive(true);
-            if (HalfMoonSphere != null) HalfMoonSphere.SetActive(false);
-        }
-        else
-        {
-            if (FullMoonSphere != null) FullMoonSphere.SetActive(false);
-            if (HalfMoonSphere != null) HalfMoonSphere.SetActive(true);
-        }
-
-        // Rotatie rond eigen as voor 3D-effect
+        // Rotatie van de bollen zelf voor 3D effect
         if (FullMoonSphere != null && FullMoonSphere.activeSelf)
             FullMoonSphere.transform.Rotate(Vector3.up, 10f * Time.deltaTime);
-        //if (HalfMoonSphere != null && HalfMoonSphere.activeSelf)
-           // HalfMoonSphere.transform.Rotate(Vector3.up, 10f * Time.deltaTime);
+        
+        if (HalfMoonSphere != null && HalfMoonSphere.activeSelf)
+            HalfMoonSphere.transform.Rotate(Vector3.up, 10f * Time.deltaTime);
     }
 
-    // -----------------------------
-    // 4️⃣ Licht activeren en maan zichtbaar maken
-    // -----------------------------
     private void UpdateLightActivation()
     {
         bool isNight = CurrentHour < sunriseHour || CurrentHour >= sunsetHour;
 
-        // Bepaal één keer per nacht of de maan zichtbaar is
+        // 1. Bepaal of het nacht is en of de maan mag schijnen
         if (isNight)
         {
             if (!nightStarted)
             {
                 showMoonThisNight = Random.value < nightMoonChance;
-                nightStarted = true; // nacht gestart, dus geen nieuwe random meer
+                nightStarted = true; 
             }
         }
         else
         {
-            // Reset bij dag
             nightStarted = false;
             showMoonThisNight = false;
         }
 
-        // Zon aan/uit
         if (sunLight != null) sunLight.enabled = !isNight;
-
-        // Maan aan/uit volgens random nachtvisibiliteit
         if (moonLight != null) moonLight.enabled = showMoonThisNight;
-        if (FullMoonSphere != null) FullMoonSphere.SetActive(showMoonThisNight && FullMoonSphere.activeSelf);
-        if (HalfMoonSphere != null) HalfMoonSphere.SetActive(showMoonThisNight && HalfMoonSphere.activeSelf);
+
+        // 2. Bepaal de MAANFASE (Full of Half)
+        float lunarRotation = (time / (moonPhaseDays * dayDuration)) * 360f;
+        float phase = Mathf.Cos(lunarRotation * Mathf.Deg2Rad); // -1 = nieuw, 1 = vol
+        bool shouldBeFull = phase > 0.33f;
+
+        // 3. Zet de juiste bol aan/uit (en zorg dat ze overdag uit zijn)
+        if (FullMoonSphere != null) 
+        {
+            FullMoonSphere.SetActive(showMoonThisNight && shouldBeFull);
+        }
+
+        if (HalfMoonSphere != null) 
+        {
+            HalfMoonSphere.SetActive(showMoonThisNight && !shouldBeFull);
+        }
     }
 
-    // -----------------------------
-    // 5️⃣ Skybox overgang dag/nacht
-    // -----------------------------
     private void UpdateSkybox()
     {
         if (daySkybox == null || nightSkybox == null || sunLight == null) return;
@@ -155,9 +132,6 @@ public class DayNightCycle : MonoBehaviour
         DynamicGI.UpdateEnvironment();
     }
 
-    // -----------------------------
-    // 6️⃣ Tijd in UI
-    // -----------------------------
     private void UpdateTimeUI()
     {
         if (timeDisplay == null) return;
@@ -167,9 +141,6 @@ public class DayNightCycle : MonoBehaviour
         timeDisplay.text = $"{hour:00}:{minute:00}";
     }
 
-    // -----------------------------
-    // Check of het dag is
-    // -----------------------------
     public bool IsDay()
     {
         return CurrentHour >= sunriseHour && CurrentHour < sunsetHour;
