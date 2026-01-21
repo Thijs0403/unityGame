@@ -125,12 +125,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963c8a2417f7334ca170b600ac4585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 50
   player: {fileID: 0}
   dayNightCycle: {fileID: 0}
-  runSpeed: 4
+  daySpeed: 3
+  nightSpeed: 7
   detectionDistance: 10
-  groanClip: {fileID: 0}
-  groanCooldown: 5
+  attackDistance: 1.5
+  damage: 10
+  attackSpeed: 1.5
 --- !u!114 &1392288755899943862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,9 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
+  playerHealthSlider: {fileID: 0}
+  zombieHealthSlider: {fileID: 0}
+  deathText: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!195 &3336142461615390438
 NavMeshAgent:
   m_ObjectHideFlags: 0
