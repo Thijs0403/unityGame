@@ -3,44 +3,34 @@ using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Health Stats")]
+    public float maxHealth = 50f;
+    public float currentHealth = 50f;
+
+    [Header("Movement Settings")]
     public Transform player;           
     public DayNightCycle dayNightCycle; 
     private NavMeshAgent agent;
-    private AudioSource audioSource;
 
-    [Header("Movement Settings")]
-    public float daySpeed = 3f;      // Snelheid overdag
-    public float nightSpeed = 7f;    // Snelheid 's nachts
+    public float daySpeed = 3f;      
+    public float nightSpeed = 7f;    
     public float detectionDistance = 10f;
+    public float attackDistance = 1.5f; 
 
     [Header("Attack Settings")]
-    public float attackDistance = 1.5f; // Afstand om te kunnen slaan
-    public float damage = 10f;          // Schade per klap
-    public float attackSpeed = 1.5f;    // Vertraging tussen aanvallen
+    public float damage = 10f;          
+    public float attackSpeed = 1.5f;    
     private float nextAttackTime = 0f;
-
-    [Header("Audio")]
-    public AudioClip groanClip;
-    public float groanCooldown = 5f;
-    private float nextGroanTime = 0f;
-
-    private Vector3 lastPosition; 
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
-
-        // Automatisch Player vinden op basis van de "Player" Tag
+        
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
-        // Automatisch DayNightCycle vinden in de scene
         if (dayNightCycle == null)
             dayNightCycle = Object.FindFirstObjectByType<DayNightCycle>();
-
-        lastPosition = transform.position;
     }
 
     void Update()
@@ -49,34 +39,25 @@ public class Zombie : MonoBehaviour
 
         float distance = Vector3.Distance(player.position, transform.position);
 
-        // Check of de speler dichtbij genoeg is om te achtervolgen
         if (distance <= detectionDistance)
         {
             agent.isStopped = false;
             agent.SetDestination(player.position);
 
-            // Bepaal snelheid op basis van dag of nacht
+            // Snelheid aanpassen aan tijd
             if (dayNightCycle != null && dayNightCycle.IsDay())
                 agent.speed = daySpeed;
             else
                 agent.speed = nightSpeed;
 
-            // --- ATTACK LOGICA ---
+            // Aanvallen als hij dichtbij is
             if (distance <= attackDistance)
             {
                 AttackPlayer();
             }
-
-            // Geluid afspelen
-            if (audioSource != null && groanClip != null && Time.time >= nextGroanTime)
-            {
-                audioSource.PlayOneShot(groanClip);
-                nextGroanTime = Time.time + groanCooldown;
-            }
         }
         else
         {
-            // Blijf staan als de speler te ver weg is
             agent.isStopped = true;
         }
     }
@@ -85,15 +66,12 @@ public class Zombie : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            // Zoek het Health script op de speler capsule
             Health playerHealth = player.GetComponent<Health>();
-            
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damage); // Doe schade aan de speler
-                Debug.Log("Zombie valt aan! Speler krijgt " + damage + " schade.");
+                // Stuur 'this' mee zodat de speler weet welke zombie aanvalt
+                playerHealth.TakeDamage(damage, this);
             }
-
             nextAttackTime = Time.time + attackSpeed;
         }
     }

@@ -1,32 +1,52 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections; // Nodig voor de vertraging
+using System.Collections;
 
 public class Health : MonoBehaviour
 {
-    [Header("Health Settings")]
+    [Header("Player Health Settings")]
     public float maxHealth = 100f;
     public float currentHealth;
-    public Slider healthSlider;
+    public Slider playerHealthSlider; 
 
-    [Header("Death UI")]
-    public GameObject deathText; // Sleep je DeathText hiernaartoe
-    public Transform spawnPoint; // Sleep je Spawnpoint hiernaartoe
+    [Header("Zombie Health UI")]
+    public Slider zombieHealthSlider; // De balk die alleen verschijnt bij een gevecht
+
+    [Header("Death & Respawn")]
+    public GameObject deathText;      // De "YOU ARE DEAD" tekst
+    public Transform spawnPoint;      // Je lege object 'Spawnpoint' in de scene
 
     void Start()
     {
         currentHealth = maxHealth;
-        if (healthSlider != null)
+        
+        // Zet alles goed aan het begin
+        if (playerHealthSlider != null)
         {
-            healthSlider.maxValue = maxHealth;
-            healthSlider.value = maxHealth;
+            playerHealthSlider.maxValue = maxHealth;
+            playerHealthSlider.value = maxHealth;
         }
+
+        // Zorg dat de dood-tekst en zombie-balk standaard uit staan
+        if (deathText != null) deathText.SetActive(false);
+        if (zombieHealthSlider != null) zombieHealthSlider.gameObject.SetActive(false);
     }
 
-    public void TakeDamage(float amount)
+    // Aangepaste TakeDamage die weet welke zombie aanvalt
+    public void TakeDamage(float amount, Zombie attackingZombie = null)
     {
         currentHealth -= amount;
-        if (healthSlider != null) healthSlider.value = currentHealth;
+        if (playerHealthSlider != null) playerHealthSlider.value = currentHealth;
+
+        // Laat de healthbar van de zombie zien
+        if (zombieHealthSlider != null && attackingZombie != null)
+        {
+            zombieHealthSlider.gameObject.SetActive(true);
+            zombieHealthSlider.maxValue = attackingZombie.maxHealth;
+            zombieHealthSlider.value = attackingZombie.currentHealth;
+        }
+
+        Debug.Log("Speler HP: " + currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -36,20 +56,17 @@ public class Health : MonoBehaviour
 
     IEnumerator DieAndRespawn()
     {
-        Debug.Log("Speler is dood!");
-        
-        // 1. Laat de tekst zien
+        // Toon de tekst pas als je echt dood bent
         if (deathText != null) deathText.SetActive(true);
 
-        // 2. Wacht 3 seconden zodat de speler de tekst kan lezen
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f); // Wacht even voor de speler
 
-        // 3. Reset de speler
+        // Reset positie en health
         transform.position = spawnPoint.position;
         currentHealth = maxHealth;
-        if (healthSlider != null) healthSlider.value = maxHealth;
         
-        // 4. Maak de tekst weer onzichtbaar
+        if (playerHealthSlider != null) playerHealthSlider.value = maxHealth;
         if (deathText != null) deathText.SetActive(false);
+        if (zombieHealthSlider != null) zombieHealthSlider.gameObject.SetActive(false);
     }
 }
