@@ -21,9 +21,9 @@ public class PlayerControlsScript : MonoBehaviour
             InventoryManager.instance.ToggleInventory();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            InventoryManager.instance.RemoveItems("Wood", 2);
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    InventoryManager.instance.RemoveItems("Wood", 2);
+        //}
     }
 }
