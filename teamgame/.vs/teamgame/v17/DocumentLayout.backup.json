@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventorySlotScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\InventorySlotScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventoryManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\InventoryManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\ResourceGathering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\materials\\ResourceGathering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\Resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\materials\\Resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\PlayerControlsScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerControlsScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\NewMonoBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\NewMonoBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\ResourceGathering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\materials\\ResourceGathering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventorySlotScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\InventorySlotScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,34 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InventorySlotScript.cs",
-              "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventorySlotScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySlotScript.cs",
-              "ToolTip": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventorySlotScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\InventorySlotScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T09:59:13.129Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "InventorySlotScript.cs",
+              "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventorySlotScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySlotScript.cs",
+              "ToolTip": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventorySlotScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InventorySlotScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T09:59:13.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "InventoryManager.cs",
               "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventoryManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventoryManager.cs",
               "ToolTip": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\InventoryManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\InventoryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T08:45:40.166Z",
               "EditorCaption": ""
@@ -65,18 +65,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "NewMonoBehaviourScript.cs",
-              "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\NewMonoBehaviourScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\NewMonoBehaviourScript.cs",
-              "ToolTip": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\NewMonoBehaviourScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\NewMonoBehaviourScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T10:19:58.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "PlayerControlsScript.cs",
               "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\PlayerControlsScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerControlsScript.cs",
@@ -84,19 +72,34 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerControlsScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T10:40:37.619Z"
+              "WhenOpened": "2025-11-05T10:40:37.619Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ResourceGathering.cs",
               "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\ResourceGathering.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\materials\\ResourceGathering.cs",
               "ToolTip": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\ResourceGathering.cs",
               "RelativeToolTip": "Assets\\Scripts\\materials\\ResourceGathering.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T08:58:35.3Z"
+              "WhenOpened": "2025-11-05T08:58:35.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Resource.cs",
+              "DocumentMoniker": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\Resource.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\materials\\Resource.cs",
+              "ToolTip": "C:\\Users\\Steffan Peerdeman\\Desktop\\bit-academy\\Keuze Onderdelen\\GameDev\\TeamProject\\Project1\\unityGame\\teamgame\\Assets\\Scripts\\materials\\Resource.cs",
+              "RelativeToolTip": "Assets\\Scripts\\materials\\Resource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T09:25:18.049Z",
+              "EditorCaption": ""
             }
           ]
         },
